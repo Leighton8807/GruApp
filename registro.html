@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>GruApp</title>
+</head>
+<body>
+    <header>
+        <nav class="menu2">
+            <ul>
+                <li><a href="#"></a>Ajustes</li>
+            </ul>
+
+        </nav>
+        <div class="logo">
+            <img src="images/Captura de pantalla 2023-03-24 214832.png" alt="">
+        </div>
+
+        <div class="buscador">
+            <input type="text" class="buscar" placeholder="Buscar"> 
+                <a href="#" class="boton">
+                    <i class="icon-buscar"></i>
+                </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="https://empresite.eleconomistaamerica.co/ASOCIACION-COLOMBIANA-GRUAS.html">Gruas</a></li>
+                <li><a href="https://taller-villada-armenia.negocio.site/?utm_source=gmb&utm_medium=referral">Mecanico</a></li>
+                <li>
+                    <a href="#">Ingresar</a>
+                    <ul class="menu-vertical">
+                        <li><a href="iniciar.html">Iniciar Sesión</a></li>
+                        <li><a href="#">registrarme </a></li>
+                    </ul>
+                </li>  
+            </ul>
+        </nav>
+    </header>
+    <section class="formularioRegistro">
+        <form class="formRegistro">
+            <label for="username">Nombre de usuario:</label><br>
+            <input type="text" id="username" name="username" pattern="[a-zA-Z0-9]{6,}" title="El nombre de usuario debe tener al menos 6 caracteres alfanuméricos" required><br><br>
+        
+            <label for="firstName">Nombre:</label><br>
+            <input type="text" id="firstName" name="firstName" pattern="[a-zA-Z]+" title="El nombre solo puede contener letras" required><br><br>
+            
+            <label for="lastName">Apellido:</label><br>
+            <input type="text" id="lastName" name="lastName" pattern="[a-zA-Z]+" title="El apellido solo puede contener letras" required><br><br>
+            
+            <label for="phone">Teléfono:</label><br>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" title="Ingrese un número de teléfono válido (10 dígitos)" required><br><br>
+            
+            <label for="email">Correo electrónico:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            
+            <label for="birthdate">Fecha de nacimiento:</label><br>
+            <input type="date" id="birthdate" name="birthdate" required><br><br>
+            
+            <label for="company">Nombre de la empresa:</label><br>
+            <input type="text" id="company" name="company" required><br><br>
+            
+            <label for="city">Ciudad de residencia:</label><br>
+            <input type="text" id="city" name="city" required><br><br>
+            
+            <button type="submit">Registrarse</button>
+        </form>
+        <script src="javascript/registroUsuario.js"></script>
+    </section>
+
+    
+
+</body>
+</html>

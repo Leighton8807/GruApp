@@ -1,0 +1,320 @@
+/*BUSCADOR*/
+
+@charset "UTF-8";
+
+@font-face {
+  font-family: "buscar";
+  src:url("fonts/buscar.eot");
+  src:url("fonts/buscar.eot?#iefix") format("embedded-opentype"),
+    url("fonts/buscar.woff") format("woff"),
+    url("fonts/buscar.ttf") format("truetype"),
+    url("fonts/buscar.svg#buscar") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "buscar" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "buscar" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-buscar:before {
+  content: "\61";
+}
+
+/*STYLE PAGE*/
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body{
+  background-image: url(/images/Captura\ de\ pantalla\ 2023-03-24\ 214832.png);
+  background-size: 1400px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+header{
+  display: flex;
+  justify-content:space-around;
+  align-items:center;
+  background-color: rgb(18, 18, 18);
+  height: 15vh;
+  color: white;
+}
+
+
+/* logo */
+.logo img{
+  width: 100px;
+  height: 100px;
+}
+
+
+
+/* buscador */
+.buscador{
+  border-radius: 40px;
+  background-color:rgb(45, 45, 169);
+  padding: 10px;
+
+}
+.buscar{
+  border: none;
+  background: none;
+  outline: none;
+  color: white;
+  font-size: 20px;
+  transition: .3s;
+  width: 0px;
+}
+.buscador:hover > .buscar{
+  width: 300px;
+}
+.boton{
+  width: 40px;
+  height: 40px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+/* menu */
+.menu{
+  font-weight: bold;
+}
+.menu2{
+  font-weight: bold;
+}
+.menu2 a {
+  text-decoration: none;
+}
+.menu-vertical{
+  position: absolute;
+  display: none;
+  list-style: none;
+  width: 200px;
+  background-color: rgb(0,0,0,.5);
+}
+ul li:hover .menu-vertical{
+  display: block;
+}
+.menu-vertical li a{
+  display: block;
+  padding: 15px 15px 15px 20px;
+}
+.menu ul li{
+  display: inline-block;
+  padding: 0 20px;
+}
+.menu a{
+  color: white;
+  text-decoration: none;
+}
+
+.menu a:hover{
+  color: aqua;
+}
+
+
+
+
+/* inicio de sesion */
+.primera-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.caja1{
+  position: relative;
+  width: 380px;
+  height: 420px;
+  background:rgb(37, 37, 37);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.caja1::before{
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg,transparent, #dfbc1f,#dfbc1f);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  border-radius: 8px;
+  animation-delay: -3s;
+}
+.caja1::after{
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg,transparent,#dfbc1f ,#dfbc1f);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  border-radius: 8px;
+}
+
+@keyframes animate {
+  0%{
+      transform: rotate(0deg);
+  }
+  100%{
+      transform: rotate(360deg);
+  }
+  
+}
+.form{
+  position:absolute;
+  inset: 2px;
+  border-radius: 8px;
+  background:rgb(37, 37, 37);
+  z-index: 10;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+}
+.form h2{
+  color: #dfbc1f;
+/* grosor de la letra */
+  font-weight: 500;
+  text-align: center;
+/* espacion entre letras */
+  letter-spacing: 0.1em;
+}
+.inputcaja1{
+  position: relative;
+  width: 300px;
+  margin-top: 35px;
+}
+.inputcaja1 input{
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background: transparent;
+  border: none;
+/* quitar el borde donde se ingresa el texto */
+  outline: none;
+  color: white;
+/* aumentar tamaño de el texto q se ingrese */
+  font-size: 1em;
+  letter-spacing: 0.05em;
+}
+.inputcaja1 span{
+  position: absolute;
+  left: 0;
+  font-size: 1em;
+  color: rgb(158, 156, 156);
+  pointer-events: none;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+}
+
+.inputcaja1 input:valid ~ span,
+.inputcaja1 input:focus ~ span{
+  color: #dfbc1f;
+  transform: translateX(opx) translateY(-34px);
+  font-size: 0.75em;
+}
+
+.inputcaja1 i{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #dfbc1f;
+  border-radius: 4px;
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.inputcaja1 input:valid ~ i,
+.inputcaja1 input:focus ~ i{
+
+}
+.links{
+  display: flex;
+  justify-content: space-between;
+}
+.links a{
+  margin: 10px 0;
+  font-size: 0.75em;
+  color: rgb(158, 156, 156);
+  text-decoration: none;
+}
+.links a:hover,
+.links a:nth-child(2){
+  color: #dfbc1f;
+}
+
+input[type="enviar"]{
+  border: none;
+  outline: none;
+  background: #dfbc1f;
+  padding: 11px 25px;
+  width: 100px;
+  margin-top: 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+input[type="enviar"]:active{
+  opacity: 0.4;
+}
+
+.formRegistro{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:flex-start;
+  color: #dfbc1f ;
+  margin-top: 100px;
+  background-color: rgb(37, 37, 37);
+  padding: 10px 200px 10px 200px;
+  border-radius: 30px;
+  margin-bottom: 50px;
+}
+
+.formularioRegistro{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+
+
+
