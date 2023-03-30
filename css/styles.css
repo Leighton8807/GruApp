@@ -52,10 +52,18 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 body{
+  display: flex;
+  flex-direction: column;
   background-image: url(/images/Captura\ de\ pantalla\ 2023-03-24\ 214832.png);
-  background-size: 1400px;
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment:fixed;
+  background-color: black;
+  color: white;
+}
+
+body h1{
+  margin-top: 100px;
 }
 
 header{
